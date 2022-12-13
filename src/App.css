@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(180deg, #00e6e6, #2362c0);
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  width: 250px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 5px;
+  height: 300px;
+  overflow: auto;
 }
+
+.todo-list::-webkit-scrollbar {
+  display: none;
+}
+
+.task-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom:  1px solid #d9d9d9;
+  margin-bottom: 5px;
+}
+
+.task-item > button {
+  margin-bottom: 5px;
+}
+
+
+.add-task-input{
+  display: flex;
+  justify-content: space-between;
+}
+
