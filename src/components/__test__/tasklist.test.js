@@ -7,7 +7,6 @@ afterEach(() => {
     cleanup();
 });
 
-// Should render container and add-task-input
 test("Should render container and add-task-input", ()=> {
     render(<TaskList/>);
     const taskContainer = screen.getByTestId("task-container");
@@ -17,7 +16,6 @@ test("Should render container and add-task-input", ()=> {
     expect(addTaskInput).toBeInTheDocument();
 });
 
-// Should show an alert informing the user to not send empty tasks
 test("Should show an alert informing the user to not send empty tasks",async ()=> {
     const alertMock = jest.spyOn(window,'alert').mockImplementation(); 
     const user = userEvent.setup();

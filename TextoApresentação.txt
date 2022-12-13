@@ -1,0 +1,48 @@
+- O que é o React Testing Library?
+
+    React Testing Library é um conjunto de utilitários que permitem testar componentes React
+    sem depender dos detalhes de implementação. Essa abordagem facilita a refatoração
+    e também te orienta para as melhores práticas de acessibilidade. Ele não substitui o Jest, porém
+    é usado em complemento ao Jest para auxiliar nos testes do front-end, com métodos que mockam 
+    comportamentos do usuário, acesso a objetos do DOM, etc.
+
+- Qual é o mindset dos testes com React Testing Library?
+
+     O React Testing Library tem uma dinâmica de testes orientada as features da aplicação, como os
+      componentes deveriam se comportar em resposta a uma interação. Para isso, utilizamos ferramentas como o 
+     userEvent que simula ações que podem ser tomadas pelo usuário (escrever, clicar) enquanto navega pela aplicação 
+     e os métodos de mock do Jest, como o spyOn que utilizei nessa POC para monitorar o comportamento de um alert 
+     que aparecia numa interação do usuário indesejada, que no caso era inserir uma tarefa vazia.
+
+- Opinião:
+
+    - O que você achou?
+    Achei muito prático, embora eu sinta que nem arranhei a superfície das possibilidades de testes com essa biblioteca.
+
+    - Quais os pontos positivos e negativos?
+    Positivos:
+        Fácil configuração com o create-react-app (vem praticamente pronto pra começar);
+
+        Ótima interação com o framework Jest;
+
+        Ajuda a ter uma certa documentação do código, uma vez que a estrutura dos testes ajuda a explicar a aplicação como um todo;
+
+        Serve tanto para testes unitários como para testes funcionais;
+        
+        Tem o recurso de snapshots, que salva um backup da interface do usuário num arquivo snapshot e compara qualquer mudança 
+        durante o desenvolvimento. Ao testar um snapshot, você se depara com dois cenários: houve uma mudança inexperada na UI ou
+        o snapshot precisa ser atualizado para a nova versão da UI. Isso ajuda a evitar imprevistos durante o desenvolvimento ou a 
+        manutenção, permitindo alterações que não quebrem a parte visual da aplicação.
+
+    Negativos:
+        Posso estar errado, mas as vezes encontrei uns bugs por conta do código não atualizar na hora da execução dos testes;
+
+        O uso dos snapshots deve ser feito com bastante cuidado, pois muitas vezes pode gerar conflito com toda e qualquer alteração
+        nos componentes feitas após a geração do snapshot, sejam mudanças que afetem a regra de negócio ou até mesmo alterem o UI.
+        Isso acaba pedindo um maior zelo dos desenvolvedores para sempre manter os snapshots atualizados, porém também exige que
+        cada snapshot seja feito com a certeza de que o código está rodando bem, pois pode acabar criando uma má prática de tirar
+        snapshots de códigos quebrados. Concluindo, o recurso de Snapshot pode ser um aliado ou um inimigo do ciclo de vida da sua 
+        aplicação, mas vai depender de como você utiliza.
+
+
+
